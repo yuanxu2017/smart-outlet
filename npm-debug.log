@@ -1,0 +1,118 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/nodejs', '/usr/bin/npm', 'publish' ]
+2 info using npm@3.10.8
+3 info using node@v6.9.1
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   escapedName: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/media/yx/0007218C000727F9/MoreLinksProject/Project/DeviceSimV2/DeviceSim/node_modules/smart-outlet',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /home/yx/.npm/smart-outlet/1.0.1/package.tgz not in flight; packing
+9 verbose correctMkdir /home/yx/.npm correctMkdir not in flight; initializing
+10 info lifecycle smart-outlet@1.0.1~prepublish: smart-outlet@1.0.1
+11 silly lifecycle smart-outlet@1.0.1~prepublish: no script for prepublish, continuing
+12 verbose tar pack [ '/home/yx/.npm/smart-outlet/1.0.1/package.tgz',
+12 verbose tar pack   '/media/yx/0007218C000727F9/MoreLinksProject/Project/DeviceSimV2/DeviceSim/node_modules/smart-outlet' ]
+13 verbose tarball /home/yx/.npm/smart-outlet/1.0.1/package.tgz
+14 verbose folder /media/yx/0007218C000727F9/MoreLinksProject/Project/DeviceSimV2/DeviceSim/node_modules/smart-outlet
+15 verbose addLocalTarball adding from inside cache /home/yx/.npm/smart-outlet/1.0.1/package.tgz
+16 verbose correctMkdir /home/yx/.npm correctMkdir not in flight; initializing
+17 silly cache afterAdd smart-outlet@1.0.1
+18 verbose afterAdd /home/yx/.npm/smart-outlet/1.0.1/package/package.json not in flight; writing
+19 verbose correctMkdir /home/yx/.npm correctMkdir not in flight; initializing
+20 verbose afterAdd /home/yx/.npm/smart-outlet/1.0.1/package/package.json written
+21 silly publish { name: 'smart-outlet',
+21 silly publish   version: '1.0.1',
+21 silly publish   description: 'smart-outlet API',
+21 silly publish   author: { name: 'Patrick Seal' },
+21 silly publish   license: 'MIT',
+21 silly publish   repository:
+21 silly publish    { type: 'git',
+21 silly publish      url: 'git+https://github.com/yuanxu2017/outlet.git' },
+21 silly publish   bugs:
+21 silly publish    { url: 'https://github.com/czjs2/hs100-api/issues',
+21 silly publish      email: '21334878@qq.com' },
+21 silly publish   keywords: [ 'tplink', 'outlet', 'home', 'smartplug', 'api' ],
+21 silly publish   engines: { node: '>=4.4.0' },
+21 silly publish   dependencies: {},
+21 silly publish   devDependencies:
+21 silly publish    { chai: '^3.5.0',
+21 silly publish      'chai-as-promised': '^5.3.0',
+21 silly publish      'chai-things': '^0.2.0',
+21 silly publish      mocha: '^3.0.2',
+21 silly publish      semistandard: '^9.0.0' },
+21 silly publish   scripts:
+21 silly publish    { preversion: 'npm test',
+21 silly publish      postversion: 'git push && git push --tags',
+21 silly publish      test: 'semistandard &&  ./node_modules/.bin/mocha' },
+21 silly publish   readme: '# outlet\n[![NPM Version](https://img.shields.io/npm/v/hs100-api.svg)](https://www.npmjs.com/package/hs100-api)\n[![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg?style=flat-square)](https://github.com/Flet/semistandard)\n\noutlet API\n\n## Example\n```javascript\nconst outletApi = require(\'smart-outlet\');\n\nconst client = new outletApi.Client();\nconst plug = client.getPlug({host: \'10.0.1.2\'});\nplug.getInfo().then(console.log);\nplug.setPowerState(true);\n\n// Look for plugs, log to console, and turn them on\nclient.startDiscovery().on(\'plug-new\', (plug) => {\n  plug.getInfo().then(console.log);\n  plug.setPowerState(true);\n});\n```\n\n## API\nThe API is currently not stable and there may be breaking changes.\n\n### Client\n\n#### new Client(options)\nReturns a Client object.\n```javascript\noptions: {\n  [address]\n  [, port]\n  [, broadcast = \'255.255.255.255\']\n  [, discoveryInterval = 30000]\n  [, offlineTolerance = 3]\n  [, debug = false]\n}\n```\n\n#### startDiscovery([plugs])\nSends a discovery packet to the broadcast address every `discoveryInterval`. An array of addresses can be specified to query directly. Emits `plug-new` when a response from a new plug is received and `plug-online` for known plugs. If a known plug has not been heard from after `offlineTolerance` number of discovery attempts then emits `plug-offline`.\n\n#### stopDiscovery\nStops discovery process.\n\n#### getPlug(options)\nReturns a Plug object.\n```javascript\noptions: { host [, port = 9999] [, timeout = 0] }\n```\n\n### Plug\n#### getInfo _(promise)_\nGet all plug info. Same as calling all of getSysInfo, getCloudInfo, getConsumption, getScheduleNextAction.\n#### getSysInfo _(promise)_\nGet general plug info.\n#### getCloudInfo _(promise)_\nGet outlet Cloud information.\n#### getConsumption _(promise)_\nGet power consumption data for outlet plugs.\n#### getPowerState _(promise)_\nReturns true if plug is on.\n#### setPowerState(value) _(promise)_\nTurns the plug on or off.\n#### getScheduleNextAction _(promise)_\n#### getScheduleRules _(promise)_\n#### getAwayRules _(promise)_\n#### getTimerRules _(promise)_\n#### getTime _(promise)_\n#### getTimeZone _(promise)_\n#### getScanInfo([refresh = false] [, timeout = 17]) _(promise)_\nGet list of networks.\n#### getModel _(promise)_\n\n\n## Credits\n\nSome design cues for Client were based on https://github.com/MariusRumpf/node-lifx/\n',
+21 silly publish   readmeFilename: 'README.md',
+21 silly publish   homepage: 'https://github.com/yuanxu2017/outlet#readme',
+21 silly publish   _id: 'smart-outlet@1.0.1',
+21 silly publish   _shasum: 'dc8525bf8a751598f6a3835a7150b0223324a296',
+21 silly publish   _from: '.' }
+22 verbose getPublishConfig undefined
+23 silly mapToRegistry name smart-outlet
+24 silly mapToRegistry using default registry
+25 silly mapToRegistry registry https://registry.npmjs.org/
+26 silly mapToRegistry data Result {
+26 silly mapToRegistry   raw: 'smart-outlet',
+26 silly mapToRegistry   scope: null,
+26 silly mapToRegistry   escapedName: 'smart-outlet',
+26 silly mapToRegistry   name: 'smart-outlet',
+26 silly mapToRegistry   rawSpec: '',
+26 silly mapToRegistry   spec: 'latest',
+26 silly mapToRegistry   type: 'tag' }
+27 silly mapToRegistry uri https://registry.npmjs.org/smart-outlet
+28 verbose publish registryBase https://registry.npmjs.org/
+29 silly publish uploading /home/yx/.npm/smart-outlet/1.0.1/package.tgz
+30 verbose request uri https://registry.npmjs.org/smart-outlet
+31 verbose request sending authorization for write operation
+32 info attempt registry request try #1 at 13:59:40
+33 verbose request using bearer token for auth
+34 verbose request id 3e98da2a73b68063
+35 http request PUT https://registry.npmjs.org/smart-outlet
+36 http 403 https://registry.npmjs.org/smart-outlet
+37 verbose headers { 'content-type': 'application/json',
+37 verbose headers   'cache-control': 'max-age=300',
+37 verbose headers   'content-length': '95',
+37 verbose headers   'accept-ranges': 'bytes',
+37 verbose headers   date: 'Fri, 10 Mar 2017 05:59:41 GMT',
+37 verbose headers   via: '1.1 varnish',
+37 verbose headers   connection: 'keep-alive',
+37 verbose headers   'x-served-by': 'cache-nrt6126-NRT',
+37 verbose headers   'x-cache': 'MISS',
+37 verbose headers   'x-cache-hits': '0',
+37 verbose headers   'x-timer': 'S1489125580.849419,VS0,VE661',
+37 verbose headers   vary: 'Accept-Encoding' }
+38 verbose request invalidating /home/yx/.npm/registry.npmjs.org/smart-outlet on PUT
+39 error publish Failed PUT 403
+40 verbose stack Error: "You cannot publish over the previously published version 1.0.1." : smart-outlet
+40 verbose stack     at makeError (/usr/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:302:12)
+40 verbose stack     at CachingRegistryClient.<anonymous> (/usr/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:290:14)
+40 verbose stack     at Request._callback (/usr/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:210:14)
+40 verbose stack     at Request.self.callback (/usr/lib/node_modules/npm/node_modules/request/request.js:187:22)
+40 verbose stack     at emitTwo (events.js:106:13)
+40 verbose stack     at Request.emit (events.js:191:7)
+40 verbose stack     at Request.<anonymous> (/usr/lib/node_modules/npm/node_modules/request/request.js:1044:10)
+40 verbose stack     at emitOne (events.js:96:13)
+40 verbose stack     at Request.emit (events.js:188:7)
+40 verbose stack     at IncomingMessage.<anonymous> (/usr/lib/node_modules/npm/node_modules/request/request.js:965:12)
+41 verbose statusCode 403
+42 verbose pkgid smart-outlet
+43 verbose cwd /media/yx/0007218C000727F9/MoreLinksProject/Project/DeviceSimV2/DeviceSim/node_modules/smart-outlet
+44 error Linux 4.4.0-64-generic
+45 error argv "/usr/bin/nodejs" "/usr/bin/npm" "publish"
+46 error node v6.9.1
+47 error npm  v3.10.8
+48 error code E403
+49 error "You cannot publish over the previously published version 1.0.1." : smart-outlet
+50 error If you need help, you may report this error at:
+50 error     <https://github.com/npm/npm/issues>
+51 verbose exit [ 1, true ]

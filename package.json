@@ -1,0 +1,40 @@
+{
+  "name": "smart-outlet",
+  "version": "1.0.1",
+  "description": "smart-outlet API",
+  "author": {
+    "name": "Patrick Seal"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yuanxu2017/outlet.git"
+  },
+  "bugs": {
+    "url": "https://github.com/czjs2/hs100-api/issues",
+    "email": "21334878@qq.com"
+  },
+  "keywords": [
+    "tplink",
+    "outlet",
+    "home",
+    "smartplug",
+    "api"
+  ],
+  "engines": {
+    "node": ">=4.4.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-as-promised": "^5.3.0",
+    "chai-things": "^0.2.0",
+    "mocha": "^3.0.2",
+    "semistandard": "^9.0.0"
+  },
+  "scripts": {
+    "preversion": "npm test",
+    "postversion": "git push && git push --tags",
+    "test": "semistandard &&  ./node_modules/.bin/mocha"
+  }
+}
