@@ -8,10 +8,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yuanxu2017/outlet.git"
+    "url": "https://github.com/yuanxu2017/smart-outlet.git"
   },
   "bugs": {
-    "url": "https://github.com/czjs2/hs100-api/issues",
+    "url": "https://github.com/yuanxu2017/smart-outlet/issues",
     "email": "21334878@qq.com"
   },
   "keywords": [
