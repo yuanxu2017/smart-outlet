@@ -1,14 +1,14 @@
-# outlet
+# smart-outlet
 [![NPM Version](https://img.shields.io/npm/v/hs100-api.svg)](https://www.npmjs.com/package/hs100-api)
 [![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg?style=flat-square)](https://github.com/Flet/semistandard)
 
-outlet API
+smart-outlet API
 
 ## Example
 ```javascript
-const outletApi = require('smart-outlet');
+const smartoutletApi = require('smart-outlet');
 
-const client = new outletApi.Client();
+const client = new smartoutletApi.Client();
 const plug = client.getPlug({host: '10.0.1.2'});
 plug.getInfo().then(console.log);
 plug.setPowerState(true);
