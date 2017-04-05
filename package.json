@@ -1,30 +1,60 @@
 {
-  "name": "smart-outlet",
-  "version": "1.0.2",
-  "description": "smart-outlet API",
+  "_args": [
+    [
+      {
+        "raw": "smart-outlet",
+        "scope": null,
+        "escapedName": "smart-outlet",
+        "name": "smart-outlet",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/home/yx/Works/HouseKit/HouseKit"
+    ]
+  ],
+  "_from": "smart-outlet@latest",
+  "_id": "smart-outlet@1.0.6",
+  "_inCache": true,
+  "_location": "/smart-outlet",
+  "_nodeVersion": "6.9.1",
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/smart-outlet-1.0.2.tgz_1489127666282_0.48554445686750114"
+  },
+  "_npmUser": {
+    "name": "bywander",
+    "email": "yuanxu@callurl.net"
+  },
+  "_npmVersion": "3.10.8",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "smart-outlet",
+    "scope": null,
+    "escapedName": "smart-outlet",
+    "name": "smart-outlet",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/smart-outlet/-/smart-outlet-1.0.2.tgz",
+  "_shasum": "afa71ca68aa6e9455a8309812715e8b9e24ec378",
+  "_shrinkwrap": null,
+  "_spec": "smart-outlet",
+  "_where": "/home/yx/Works/HouseKit/HouseKit",
   "author": {
     "name": "Patrick Seal"
-  },
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/yuanxu2017/smart-outlet.git"
   },
   "bugs": {
     "url": "https://github.com/yuanxu2017/smart-outlet/issues",
     "email": "21334878@qq.com"
   },
-  "keywords": [
-    "tplink",
-    "outlet",
-    "home",
-    "smartplug",
-    "api"
-  ],
-  "engines": {
-    "node": ">=4.4.0"
-  },
   "dependencies": {},
+  "description": "smart-outlet API",
   "devDependencies": {
     "chai": "^3.5.0",
     "chai-as-promised": "^5.3.0",
@@ -32,9 +62,41 @@
     "mocha": "^3.0.2",
     "semistandard": "^9.0.0"
   },
+  "directories": {},
+  "dist": {
+    "shasum": "afa71ca68aa6e9455a8309812715e8b9e24ec378",
+    "tarball": "https://registry.npmjs.org/smart-outlet/-/smart-outlet-1.0.2.tgz"
+  },
+  "engines": {
+    "node": ">=4.4.0"
+  },
+  "gitHead": "0d2efdb8f04d9352b4b689b89e76839dcebd33b3",
+  "homepage": "https://github.com/yuanxu2017/smart-outlet#readme",
+  "keywords": [
+    "tplink",
+    "outlet",
+    "home",
+    "smartplug",
+    "api"
+  ],
+  "license": "MIT",
+  "maintainers": [
+    {
+      "name": "bywander",
+      "email": "yuanxu@callurl.net"
+    }
+  ],
+  "name": "smart-outlet",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuanxu2017/smart-outlet.git"
+  },
   "scripts": {
-    "preversion": "npm test",
     "postversion": "git push && git push --tags",
+    "preversion": "npm test",
     "test": "semistandard &&  ./node_modules/.bin/mocha"
-  }
+  },
+  "version": "1.0.6"
 }
